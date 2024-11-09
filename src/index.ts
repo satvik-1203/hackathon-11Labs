@@ -3,6 +3,7 @@ import { textToVid, agentSignedUrl } from "./textToVid";
 import { captionsPoll, captionsSubmit } from "./routes/captions"; // Add this import
 import { lipdubSubmit } from "./routes/lipdub/submit";
 import { lipdubPoll } from "./routes/lipdub/poll";
+import cors from 'cors';
 import dotenv from 'dotenv';
 
 if (process.env.NODE_ENV !== 'production') {
@@ -13,6 +14,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 app.use(express.json());
+app.use(cors())
 
 app.get("/api/agent", (req, res) => {
   res.json({ message: process.env.XI_API_KEY, agentId: process.env.AGENT_ID });
