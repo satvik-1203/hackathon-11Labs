@@ -1,6 +1,8 @@
 import express from "express";
 import { textToVid, agentSignedUrl } from "./textToVid";
 import { captionsPoll, captionsSubmit } from "./routes/captions"; // Add this import
+import { lipdubSubmit } from "./routes/lipdub/submit";
+import { lipdubPoll } from "./routes/lipdub/poll";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -17,6 +19,9 @@ app.post("/agent-signed-url", agentSignedUrl);
 // Captions API
 app.post('/captions-poll', captionsPoll);
 app.post('/captions-submit', captionsSubmit);
+// Captions Lipdub
+app.post('/lipdub-poll', lipdubSubmit);
+app.post('/lipdub-poll', lipdubPoll);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
