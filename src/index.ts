@@ -3,6 +3,8 @@ import { textToVid, agentSignedUrl } from "./textToVid";
 import { captionsPoll, captionsSubmit } from "./routes/captions"; // Add this import
 import { lipdubSubmit } from "./routes/lipdub/submit";
 import { lipdubPoll } from "./routes/lipdub/poll";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
