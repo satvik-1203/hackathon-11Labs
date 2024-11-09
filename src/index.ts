@@ -4,7 +4,10 @@ import { captionsPoll, captionsSubmit } from "./routes/captions"; // Add this im
 import { lipdubSubmit } from "./routes/lipdub/submit";
 import { lipdubPoll } from "./routes/lipdub/poll";
 import dotenv from 'dotenv';
-dotenv.config();
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config();
+}
 
 const app = express();
 const port = process.env.PORT || 3000;
