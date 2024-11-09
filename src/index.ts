@@ -20,7 +20,7 @@ app.post("/agent-signed-url", agentSignedUrl);
 app.post('/captions-poll', captionsPoll);
 app.post('/captions-submit', captionsSubmit);
 // Captions Lipdub
-app.post('/lipdub-poll', lipdubSubmit);
+app.post('/lipdub-submit', lipdubSubmit);
 app.post('/lipdub-poll', lipdubPoll);
 
 app.listen(port, () => {
